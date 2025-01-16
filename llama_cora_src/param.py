@@ -65,7 +65,7 @@ def parse_args(parse=True, **optional_kwargs):
 
     # Checkpoint
     parser.add_argument('--output', type=str, default='snap/pretrain')
-    parser.add_argument('--load', type=str, default=None, help='Abandoned')
+    #parser.add_argument('--load', type=str, default=None, help='Abandoned')
     parser.add_argument('--from_scratch', action='store_true')
     parser.add_argument('--inference', action='store_true')
 
@@ -79,7 +79,7 @@ def parse_args(parse=True, **optional_kwargs):
     # Model Config
     parser.add_argument('--backbone', type=str, default='llama-v1-7b')
     parser.add_argument('--tokenizer', type=str, default='LlamaTokenizerFast')
-    parser.add_argument('--whole_word_embed', action='Abandoned')
+    #parser.add_argument('--whole_word_embed', action='Abandoned')
 
     parser.add_argument('--max_text_length', type=int, default=2048)
 
