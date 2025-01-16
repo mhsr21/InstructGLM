@@ -103,8 +103,6 @@ class Trainer(TrainerBase):
         for epoch in range(self.args.epoch):
             global_step=0
 
-            if self.start_epoch is not None:
-                epoch += self.start_epoch
             if self.args.distributed:
                 self.train_loader.sampler.set_epoch(epoch)    #keep in mind this
 
