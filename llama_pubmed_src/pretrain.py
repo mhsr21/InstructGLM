@@ -39,7 +39,8 @@ from trainer_base import TrainerBase
 from pretrain_model import InstructGLM
 
 def save_pickle(data, filename):
-    with open(filename, "wb") as f:
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+    with open(filename, "w+b") as f:
         pickle.dump(data, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 class FP(nn.Module):
