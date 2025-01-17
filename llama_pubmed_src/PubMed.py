@@ -64,10 +64,10 @@ class PubMed_Dataset(Dataset):
         self.l_max=self.args.max_text_length
         self.real_feature=load_pickle(os.path.join('PubMed','Llama_final_norm_pub_real_feature.pkl')) #4
         self.train_L1=load_pickle(os.path.join('PubMed','final_pub_L1.pkl'))  #5
-        self.transductive=load_pickle(os.path.join('PubMed','final_pub_transductive.pkl'))  #6 
-        #self.transductive=load_pickle(os.path.join('PubMed','small_pub_transductive.pkl'))  #6 
-        self.classification=load_pickle(os.path.join('PubMed','final_pub_classification.pkl'))  #7
-        #self.classification=load_pickle(os.path.join('PubMed','small_pub_classification.pkl'))  #7
+        #self.transductive=load_pickle(os.path.join('PubMed','final_pub_transductive.pkl'))  #6 
+        self.transductive=load_pickle(os.path.join('PubMed','small_pub_transductive.pkl'))  #6 
+        #self.classification=load_pickle(os.path.join('PubMed','final_pub_classification.pkl'))  #7
+        self.classification=load_pickle(os.path.join('PubMed','small_pub_classification.pkl'))  #7
         self.node_feature=load_pickle(os.path.join('PubMed','full_final_pubmed_node_feature.pkl'))  #8
 
         LA=[]
