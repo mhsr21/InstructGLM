@@ -24,7 +24,7 @@ python -m torch.distributed.launch \
         --losses 'link,classification' \
         --backbone './7B' \
         --output $output ${@:2} \
-        --epoch 4 \
+        --epoch 2 \
 	--weight_decay 0 \
         --max_text_length 512 \
         --gen_max_length 64 \
