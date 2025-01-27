@@ -28,4 +28,4 @@ python -m torch.distributed.launch \
 	--weight_decay 0 \
         --max_text_length 2048 \
         --gen_max_length 64 \
-	--lr 0.00003
+	--lr 0.00008
