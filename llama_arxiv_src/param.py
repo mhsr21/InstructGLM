@@ -74,7 +74,7 @@ def parse_args(parse=True, **optional_kwargs):
     parser.add_argument('--fp16', action='store_true')
     parser.add_argument("--distributed", action='store_true')
     parser.add_argument("--num_workers", default=0, type=int)
-    parser.add_argument('--local-rank', type=int, default=-1)
+    parser.add_argument('--local_rank', type=int, default=-1)
 
     # Model Config
     parser.add_argument('--backbone', type=str, default='llama-v1-7b')
