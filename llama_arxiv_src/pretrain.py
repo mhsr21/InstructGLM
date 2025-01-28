@@ -335,6 +335,7 @@ class Trainer(TrainerBase):
                     with amp.scale_loss(loss, self.optim) as scaled_loss:
                         scaled_loss.backward()
                 else:
+                    print(args.gpu)
                     loss.backward()
 
                 loss = loss.detach()
@@ -699,7 +700,7 @@ def main_worker(gpu, args):     # the gpu is the local_rank
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
-        dist.init_process_group(backend='nccl', timeout=timedelta(hours=6))
+        dist.init_process_group(backend='nccl', timeout=timedelta(seconds=120))
 
     # define the prompts used in training
     if not args.inference:                      # Train Consoles
