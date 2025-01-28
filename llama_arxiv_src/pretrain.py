@@ -322,8 +322,8 @@ class Trainer(TrainerBase):
                                 results[f'{task}_loss_count'] = task_counts[task]
 
                     else:
-                        pass
-                        # 114514 results = self.model.train_step(batch)
+                        # pass
+                        results = self.model.train_step(batch)
 
                 loss = results['loss']/self.args.gradient_accumulation_steps
                 torch.cuda.empty_cache()
@@ -699,7 +699,7 @@ def main_worker(gpu, args):     # the gpu is the local_rank
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
-        dist.init_process_group(backend='nccl', timeout=timedelta(hours=6))
+        dist.init_process_group(backend='nccl', timeout=timedelta(seconds=60))
 
     # define the prompts used in training
     if not args.inference:                      # Train Consoles
