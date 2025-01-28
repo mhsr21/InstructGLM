@@ -328,6 +328,7 @@ class Trainer(TrainerBase):
                 loss = results['loss']/self.args.gradient_accumulation_steps
                 torch.cuda.empty_cache()
                 dist.barrier()
+                self.optim.zero_grad()
                 
                 if self.args.fp16 and _use_native_amp:
                     self.scaler.scale(loss).backward()
