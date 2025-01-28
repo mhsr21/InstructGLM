@@ -15,7 +15,7 @@ import torch.nn as nn
 from torch.nn.parallel import DistributedDataParallel as DDP
 import torch.distributed as dist
 import torch.backends.cudnn as cudnn
-#os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3,4,5,6,7"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0,1,2,3,4,5,6,7"
 from param import parse_args
 from pretrain_data import get_loader,load_pickle 
 from utils import LossMeter
