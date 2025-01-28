@@ -689,7 +689,7 @@ def main_worker(gpu, args):     # the gpu is the local_rank
 
     if args.distributed:
         torch.cuda.set_device(args.gpu)
-        dist.init_process_group(backend='nccl')
+        dist.init_process_group(backend='nccl', timeout=timedelta(hours=12))
 
     # define the prompts used in training
     if not args.inference:                      # Train Consoles
