@@ -335,7 +335,7 @@ class Trainer(TrainerBase):
                     with amp.scale_loss(loss, self.optim) as scaled_loss:
                         scaled_loss.backward()
                 else:
-                    print(f"==gpu id: {args.gpu}==")
+                    #print(f"==gpu id: {args.gpu}==")
                     loss.backward()
 
                 loss = loss.detach()
