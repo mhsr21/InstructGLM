@@ -323,10 +323,16 @@ class Trainer(TrainerBase):
                         results = self.model.train_step(batch)
 
                 loss = results['loss']/self.args.gradient_accumulation_steps
-                dist.barrier()
                 torch.cuda.empty_cache()
+                dist.barrier()
                 
-                loss.backward()
+                if self.args.fp16 and _use_native_amp:
+                    self.scaler.scale(loss).backward()
+                elif self.args.fp16 and _use_apex:
+                    with amp.scale_loss(loss, self.optim) as scaled_loss:
+                        scaled_loss.backward()
+                else:
+                    loss.backward()
 
                 loss = loss.detach()
 
