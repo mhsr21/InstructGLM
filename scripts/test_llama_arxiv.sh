@@ -15,7 +15,7 @@ python -m torch.distributed.launch \
 	--gradient_accumulation_steps 1 \
         --train Arxiv \
         --valid Arxiv \
-        --batch_size 2 \
+        --batch_size 4 \
         --optim adamw \
         --warmup_ratio 0.05 \
         --num_workers 8 \
