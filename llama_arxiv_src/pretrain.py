@@ -47,8 +47,9 @@ def save_pickle(data, filename):
 class FP(nn.Module):    # first_model, i.e. simple MLP for dimension transformation of OGB/ GIANT node embedding + freezed Llama-7b word embeddings.
     def __init__(self,llama_embed,real):
         super(FP,self).__init__()
-        self.trans_2=nn.Linear(512,4096,bias=False)
         self.trans_1=nn.Linear(768,512,bias=False)
+        self.trans_2=nn.Linear(512,4096,bias=False)
+        
         self.rac=nn.ELU()
         self.sln=nn.LayerNorm(512)
 
@@ -60,7 +61,8 @@ class FP(nn.Module):    # first_model, i.e. simple MLP for dimension transformat
 
         self.embed_tokens=llama_embed   # freezed Llama-7b word embeddings.
 
-        self.real=real
+        # 114514 self.real=real
+        self.real=real.to(torch.float32)
         
 
     def forward(self, input_ids):
@@ -320,7 +322,7 @@ class Trainer(TrainerBase):
                                 results[f'{task}_loss_count'] = task_counts[task]
 
                     else:
-                        results = self.model.train_step(batch)
+                        # 114514 results = self.model.train_step(batch)
 
                 loss = results['loss']/self.args.gradient_accumulation_steps
                 torch.cuda.empty_cache()
