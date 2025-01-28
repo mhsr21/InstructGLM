@@ -322,8 +322,8 @@ class Trainer(TrainerBase):
                                 results[f'{task}_loss_count'] = task_counts[task]
 
                     else:
-                        # pass
-                        results = self.model.train_step(batch)
+                        pass
+                        # results = self.model.train_step(batch)
 
                 loss = results['loss']/self.args.gradient_accumulation_steps
                 torch.cuda.empty_cache()
