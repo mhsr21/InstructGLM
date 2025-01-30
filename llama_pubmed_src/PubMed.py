@@ -277,7 +277,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', '<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[link_datum[0]]):  
+                        while go_on and count < len(self.train_L1[link_datum[0]]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[link_datum[0]])))).difference(set(already_idx)))
@@ -311,7 +311,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>', '<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[link_datum[0]]):  
+                        while go_on and count < len(self.train_L1[link_datum[0]]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[link_datum[0]])))).difference(set(already_idx)))
@@ -347,7 +347,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(self.train_L1[link_datum[0]]):  
+                    while go_on and count < len(self.train_L1[link_datum[0]]) and ((not _do_abl) or count < _kval**1):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(self.train_L1[link_datum[0]])))).difference(set(already_idx)))
@@ -441,7 +441,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', '<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -475,7 +475,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', '<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -520,7 +520,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -567,7 +567,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2], middle_list[:-2],'<extra_id_0>', '<extra_id_0>','<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -607,7 +607,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2], '<extra_id_0>', '<extra_id_0>','<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -659,7 +659,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2],'<extra_id_0>','<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2): 
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2): 
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -718,7 +718,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>','<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -753,7 +753,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', '<extra_id_0>')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3): 
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3): 
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -802,7 +802,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -858,7 +858,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2], middle_list[:-2],'<extra_id_0>', '<extra_id_0>','(<extra_id_0>,<extra_id_0>)')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -903,7 +903,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2],'<extra_id_0>', '<extra_id_0>','(<extra_id_0>,<extra_id_0>)')
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -963,7 +963,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2],'<extra_id_0>','(<extra_id_0>,<extra_id_0>)')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1012,7 +1012,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], '<extra_id_0>',self.node_feature[link_datum[1]][0], '<extra_id_0>',self.node_feature[link_datum[0]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[link_datum[0]]):  
+                        while go_on and count < len(self.train_L1[link_datum[0]]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text  
 
                             select=list(set(list(range(len(self.train_L1[link_datum[0]])))).difference(set(already_idx)))
@@ -1047,7 +1047,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],'<extra_id_0>',self.node_feature[negative][0], '<extra_id_0>',self.node_feature[link_datum[0]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[link_datum[0]]):  
+                        while go_on and count < len(self.train_L1[link_datum[0]]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[link_datum[0]])))).difference(set(already_idx)))
@@ -1083,7 +1083,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],'<extra_id_0>',self.node_feature[link_datum[0]][0])
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(self.train_L1[link_datum[0]]):  
+                    while go_on and count < len(self.train_L1[link_datum[0]]) and ((not _do_abl) or count < _kval**1):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(self.train_L1[link_datum[0]])))).difference(set(already_idx)))
@@ -1132,7 +1132,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], '<extra_id_0>',self.node_feature[link_datum[2]][0], '<extra_id_0>',self.node_feature[link_datum[0]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1166,7 +1166,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], '<extra_id_0>',self.node_feature[negative][0], '<extra_id_0>',self.node_feature[link_datum[0]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1211,7 +1211,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], '<extra_id_0>',self.node_feature[link_datum[0]][0])
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1258,7 +1258,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], middle_list[:-2],'<extra_id_0>',self.node_feature[link_datum[2]][0], '<extra_id_0>',self.node_feature[link_datum[0]][0],'<extra_id_0>',self.node_feature[link_datum[1]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1301,7 +1301,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], middle_list[:-2],'<extra_id_0>',self.node_feature[negative][0], '<extra_id_0>',self.node_feature[link_datum[0]][0],'<extra_id_0>',self.node_feature[link_datum[1]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1351,7 +1351,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],middle_list[:-2],'<extra_id_0>',self.node_feature[link_datum[0]][0],'<extra_id_0>',self.node_feature[link_datum[1]][0])
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1410,7 +1410,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],'<extra_id_0>',self.node_feature[link_datum[3]][0],'<extra_id_0>',self.node_feature[link_datum[0]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3): 
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3): 
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1444,7 +1444,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],'<extra_id_0>',self.node_feature[negative][0],'<extra_id_0>',self.node_feature[link_datum[0]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1493,7 +1493,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],'<extra_id_0>',self.node_feature[link_datum[0]][0])
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1549,7 +1549,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], middle_list[:-2],'<extra_id_0>',self.node_feature[link_datum[3]][0], '<extra_id_0>',self.node_feature[link_datum[0]][0],'<extra_id_0>',self.node_feature[link_datum[1]][0],'<extra_id_0>',self.node_feature[link_datum[2]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1594,7 +1594,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2], middle_list[:-2],'<extra_id_0>',self.node_feature[negative][0], '<extra_id_0>',self.node_feature[link_datum[0]][0],'<extra_id_0>',self.node_feature[link_datum[1]][0],'<extra_id_0>',self.node_feature[link_datum[2]][0])
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1655,7 +1655,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_1 + task_template['source'].format('<extra_id_0>',self.node_feature[link_datum[0]][0], node_list[:-2],middle_list[:-2],'<extra_id_0>',self.node_feature[link_datum[0]][0],'<extra_id_0>',self.node_feature[link_datum[1]][0],'<extra_id_0>',self.node_feature[link_datum[2]][0])
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -1752,7 +1752,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[point]):  
+                        while go_on and count < len(self.train_L1[point]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[point])))).difference(set(already_idx)))
@@ -1784,7 +1784,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[point]): 
+                        while go_on and count < len(self.train_L1[point]) and ((not _do_abl) or count < _kval**1): 
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[point])))).difference(set(already_idx)))
@@ -1820,7 +1820,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(self.train_L1[point]):  
+                    while go_on and count < len(self.train_L1[point]) and ((not _do_abl) or count < _kval**1):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(self.train_L1[point])))).difference(set(already_idx)))
@@ -1863,7 +1863,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text  
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1894,7 +1894,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1932,7 +1932,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -1978,7 +1978,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], middle_list[:-2],'<extra_id_0>', label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2016,7 +2016,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2], '<extra_id_0>', negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2): 
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2): 
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2062,7 +2062,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2121,7 +2121,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2155,7 +2155,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], '<extra_id_0>', negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2200,7 +2200,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2253,7 +2253,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2], middle_list[:-2],'<extra_id_0>',label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2296,7 +2296,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2], '<extra_id_0>',negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2352,7 +2352,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>', node_list[:-2],middle_list[:-2],'<extra_id_0>')
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3): 
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3): 
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2400,7 +2400,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], '<extra_id_0>',tit, label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[point]):  
+                        while go_on and count < len(self.train_L1[point]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[point])))).difference(set(already_idx)))
@@ -2432,7 +2432,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], '<extra_id_0>',tit, negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(self.train_L1[point]):  
+                        while go_on and count < len(self.train_L1[point]) and ((not _do_abl) or count < _kval**1):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(self.train_L1[point])))).difference(set(already_idx)))
@@ -2469,7 +2469,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],'<extra_id_0>',tit)
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(self.train_L1[point]):  
+                    while go_on and count < len(self.train_L1[point]) and ((not _do_abl) or count < _kval**1):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(self.train_L1[point])))).difference(set(already_idx)))
@@ -2512,7 +2512,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], '<extra_id_0>',tit, label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2): 
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2): 
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2543,7 +2543,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], '<extra_id_0>',tit, negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2581,7 +2581,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],'<extra_id_0>',tit)
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2627,7 +2627,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], middle_list[:-2],'<extra_id_0>',tit, label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text  
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2666,7 +2666,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],middle_list[:-2], '<extra_id_0>',tit, negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L2):  
+                        while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2713,7 +2713,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],middle_list[:-2],'<extra_id_0>',tit)
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L2):  
+                    while go_on and count < len(train_L2) and ((not _do_abl) or count < _kval**2):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L2)))).difference(set(already_idx)))
@@ -2774,7 +2774,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], '<extra_id_0>',tit, label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text  
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2808,7 +2808,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], '<extra_id_0>',tit, negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2853,7 +2853,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],'<extra_id_0>',tit)
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2906,7 +2906,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2], middle_list[:-2],'<extra_id_0>',tit,label)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text  
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -2949,7 +2949,7 @@ class PubMed_Dataset(Dataset):
                         source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],middle_list[:-2], '<extra_id_0>',tit,negative)
                         go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                         already_idx=[]
-                        while go_on and count < len(train_L3):  
+                        while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                             temp_text=source_text   
 
                             select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
@@ -3006,7 +3006,7 @@ class PubMed_Dataset(Dataset):
                     source_text =self.prefix_2 + task_template['source'].format('<extra_id_0>',tit, node_list[:-2],middle_list[:-2],'<extra_id_0>',tit)
                     go_on=True if len(self.tokenizer.tokenize(source_text))+1 < self.l_max else False
                     already_idx=[]
-                    while go_on and count < len(train_L3):  
+                    while go_on and count < len(train_L3) and ((not _do_abl) or count < _kval**3):  
                         temp_text=source_text   
 
                         select=list(set(list(range(len(train_L3)))).difference(set(already_idx)))
