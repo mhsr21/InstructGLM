@@ -18,6 +18,9 @@ import os
 from torch.utils.data.distributed import DistributedSampler
 import copy
 
+_do_abl = False
+
+_kval = 5
 
 def load_json(file_path):
     with open(file_path, "r") as f:
